@@ -1,0 +1,361 @@
+---
+import Layout from '../layouts/layout.astro';
+---
+
+<Layout title="Fountain Syntax Reference — FountainFormat">
+  <main>
+    <section class="hero-small">
+      <h1>Fountain Syntax Reference</h1>
+      <p class="tagline">Everything you need to write screenplays in plain text.</p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Scene Headings</h2>
+        <p>Scene headings (or "slug lines") begin with INT., EXT., EST., INT./EXT., or I/E. followed by a location and time of day.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>INT. COFFEE SHOP - DAY
+
+EXT. BEACH - SUNSET
+
+INT./EXT. MOVING CAR - NIGHT</pre>
+      </div>
+      <p class="note">You can force any line to be a scene heading by starting it with a period: <code>.FLASHBACK</code></p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Action</h2>
+        <p>Action (or "description") is any paragraph that doesn't meet the criteria for another element. Just write normally.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>The door slams open. SARAH storms in, 
+soaking wet, mascara running down her face.
+
+She throws her keys on the table.</pre>
+      </div>
+      <p class="note">Force a line to be action by starting with <code>!</code>: <code>!BANG!</code></p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Character Names</h2>
+        <p>Character names are in ALL CAPS on their own line, with dialogue following below.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>SARAH
+I can't believe you did that.
+
+MARCUS (V.O.)
+Neither can I.
+
+DETECTIVE #1
+Where were you last night?</pre>
+      </div>
+      <p class="note">Extensions like (V.O.), (O.S.), (CONT'D) go on the same line. Force a character name with <code>@</code>: <code>@McCLANE</code></p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Dialogue</h2>
+        <p>Dialogue is any text following a character name, until the next blank line.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>ANNA
+You know what your problem is?
+You never listen. Not once.
+Not ever.</pre>
+      </div>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Parentheticals</h2>
+        <p>Parentheticals (or "wrylies") are wrapped in parentheses on their own line within dialogue.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>MARCUS
+(under his breath)
+This is insane.
+(beat)
+Completely insane.</pre>
+      </div>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Dual Dialogue</h2>
+        <p>For characters speaking simultaneously, add a caret <code>^</code> before the second character name.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>ANNA
+I hate you!
+
+^MARCUS
+I love you!</pre>
+      </div>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Transitions</h2>
+        <p>Transitions are uppercase lines ending in "TO:" — they appear right-aligned in output.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>CUT TO:
+
+FADE TO BLACK.
+
+DISSOLVE TO:</pre>
+      </div>
+      <p class="note">Force any line to be a transition with <code>></code>: <code>> FADE OUT.</code></p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Centered Text</h2>
+        <p>Center text by wrapping it with <code>></code> and <code><</code>.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>>THE END<
+
+>A Film by Jane Doe<</pre>
+      </div>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Emphasis</h2>
+        <p>Style text with asterisks and underscores, like Markdown.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>*italic*
+**bold**
+***bold italic***
+_underline_</pre>
+      </div>
+      <p class="note">You can combine them: <code>_**bold underline**_</code></p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Title Page</h2>
+        <p>Title page info goes at the very top, as key/value pairs. Blank line ends the title page.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>Title: Big Fish
+Credit: Written by
+Author: John August
+Draft date: 1/20/2003
+Contact:
+    John August
+    john@johnaugust.com</pre>
+      </div>
+      <p class="note">Common keys: Title, Credit, Author, Source, Draft date, Contact, Copyright</p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Page Breaks</h2>
+        <p>Force a page break with three or more equals signs on their own line.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>===</pre>
+      </div>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Sections & Synopses</h2>
+        <p>Organize your script with sections (like Markdown headings) and synopses. These don't appear in printed output.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre># Act 1
+
+## Scene 1
+
+= Sarah meets Marcus at the coffee shop.
+
+INT. COFFEE SHOP - DAY</pre>
+      </div>
+      <p class="note">Sections use <code>#</code>, synopses use <code>=</code>. Purely for outlining.</p>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Notes</h2>
+        <p>Add notes (not printed) with double brackets.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>INT. COFFEE SHOP - DAY [[production: need rain machine]]
+
+SARAH
+[[maybe cut this line?]]
+I never want to see you again.</pre>
+      </div>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Boneyard</h2>
+        <p>Comment out large sections with <code>/* */</code>. Ignored in output.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>/*
+INT. DELETED SCENE - DAY
+
+This whole scene was cut.
+*/</pre>
+      </div>
+    </section>
+
+    <section class="syntax-section">
+      <div class="section-header">
+        <h2>Line Breaks</h2>
+        <p>Fountain auto-wraps text. Force a line break with two spaces at end of line, or use blank lines.</p>
+      </div>
+      <div class="example-box">
+        <div class="example-label">Fountain</div>
+        <pre>MARCUS
+I came here to say two things:  
+One, I'm sorry.  
+Two, goodbye.</pre>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h3>Ready to write?</h3>
+      <a href="https://coffeedraft.com" class="cta">Try CoffeeDraft — Free Editor</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main { width: 100%; }
+
+  .hero-small {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-small h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-small .tagline {
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  .syntax-section {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--border);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .example-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .example-label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .example-box pre {
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: var(--text);
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .note {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .note code {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    color: var(--accent-light);
+    background: var(--card);
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+  }
+
+  .cta-section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .cta-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .cta:hover { background: var(--accent-light); }
+</style>
