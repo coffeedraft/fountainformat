@@ -1,0 +1,175 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Fountain is the open markup language for screenwriters. Human-readable, software-agnostic, future-proof." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        <span>FountainFormat</span>
+      </div>
+      <div class="nav-links">
+        <a href="/syntax">Syntax</a>
+        <a href="/examples">Examples</a>
+        <a href="/tools">Tools</a>
+      </div>
+      <div class="nav-spacer"></div>
+    </nav>
+
+    <slot />
+
+    <footer>
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        <span>FountainFormat</span>
+      </div>
+      <div class="footer-right">
+        <span>By <a href="https://thorsten.info">Thorsten Harms</a></span>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </footer>
+
+    <style is:global>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      :root {
+        --bg: #0b1120;
+        --card: #0f1419;
+        --border: #1e2a35;
+        --text: #b8c5d6;
+        --text-dim: #8a9bb0;
+        --white: #fff;
+        --accent: #0d9488;
+        --accent-light: #14b8a6;
+      }
+
+      :root.light {
+        --bg: #ffffff;
+        --card: #ffffff;
+        --border: #e2e8f0;
+        --text: #475569;
+        --text-dim: #64748b;
+        --white: #0f172a;
+        --accent: #14b8a6;
+        --accent-light: #0d9488;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        font-size: 16px;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 2rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        color: var(--white);
+        font-size: 1.1rem;
+      }
+
+      .logo .icon { color: var(--accent-light); }
+
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover { color: var(--accent-light); }
+
+      .nav-spacer { width: 140px; }
+
+      footer {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-dim);
+        font-size: 0.85rem;
+      }
+
+      .footer-right {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--text-dim);
+      }
+
+      .footer-right a {
+        color: var(--text-dim);
+        text-decoration: none;
+      }
+
+      #theme-toggle {
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-dim);
+      }
+
+      :root.light #theme-toggle .sun { display: none; }
+      :root:not(.light) #theme-toggle .moon { display: none; }
+    </style>
+
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      
+      if (localStorage.getItem('theme') === 'light') {
+        root.classList.add('light');
+      }
+
+      toggle?.addEventListener('click', () => {
+        root.classList.toggle('light');
+        localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      });
+    </script>
+  </body>
+</html>

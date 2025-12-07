@@ -1,16 +1,329 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="FountainFormat — The Screenplay Markup Language">
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <div class="stars"></div>
+        <div class="glow"></div>
+        <div class="hero-content">
+          <h1>Write screenplays in plain text</h1>
+          <p class="tagline">Fountain is the open markup language for screenwriters. Human-readable, software-agnostic, future-proof. Created by John August and Stu Maschwitz.</p>
+          <a href="https://coffeedraft.com" class="cta">Try CoffeeDraft Editor</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo">
+      <div class="section-header">
+        <h2>Example</h2>
+        <h3>Plain text becomes formatted screenplay</h3>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-col">
+          <div class="demo-label">Fountain source</div>
+          <pre class="fountain-code">INT. COFFEE SHOP - DAY
+
+A quiet corner. Rain on glass.
+
+ANNA
+(hesitant)
+Is this seat taken?
+
+MARCUS
+It is now.</pre>
+        </div>
+        <div class="demo-col">
+          <div class="demo-label">Rendered output</div>
+          <div class="rendered">
+            <div class="scene">INT. COFFEE SHOP - DAY</div>
+            <div class="action">A quiet corner. Rain on glass.</div>
+            <div class="character">ANNA</div>
+            <div class="paren">(hesitant)</div>
+            <div class="dialogue">Is this seat taken?</div>
+            <div class="character">MARCUS</div>
+            <div class="dialogue">It is now.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-header">
+        <h2>Why Fountain</h2>
+        <h3>No lock-in. No special software. Just text.</h3>
+      </div>
+      <div class="features-grid">
+        <div class="feature">
+          <h4>Plain text</h4>
+          <p>Write in any editor. Notepad, VS Code, iA Writer—anything.</p>
+        </div>
+        <div class="feature">
+          <h4>Portable</h4>
+          <p>Your scripts are .fountain files. Open them anywhere, forever.</p>
+        </div>
+        <div class="feature">
+          <h4>Readable</h4>
+          <p>Looks like a screenplay even as raw text. No cryptic markup.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="syntax-preview">
+      <div class="section-header">
+        <h2>Quick Reference</h2>
+        <h3>Core syntax at a glance</h3>
+      </div>
+      <div class="syntax-list">
+        <div class="syntax-item"><code>INT. LOCATION</code><span>Scene heading</span></div>
+        <div class="syntax-item"><code>CHARACTER</code><span>All caps, own line</span></div>
+        <div class="syntax-item"><code>(parenthetical)</code><span>Wrapped in parens</span></div>
+        <div class="syntax-item"><code>Dialogue text</code><span>Lines after character</span></div>
+        <div class="syntax-item"><code>Action lines</code><span>Regular paragraphs</span></div>
+        <div class="syntax-item"><code>> FADE OUT.</code><span>Transitions</span></div>
+        <div class="syntax-item"><code>*italic* **bold**</code><span>Emphasis</span></div>
+        <div class="syntax-item"><code>===</code><span>Page break</span></div>
+      </div>
+    </section>
+
+    <section class="origin">
+      <div class="section-header">
+        <h2>Origin</h2>
+        <h3>Built by screenwriters, for screenwriters</h3>
+      </div>
+      <p>Fountain was created in 2011 by <a href="https://johnaugust.com">John August</a> (Big Fish, Charlie's Angels) and <a href="https://prolost.com">Stu Maschwitz</a> (visual effects artist and software developer). They merged two projects—Scrippets and Screenplay Markdown—into a single open standard.</p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main { width: 100%; }
+
+  section {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .hero {
+    padding: 2rem;
+    border-top: none;
+  }
+
+  .hero-card {
+    position: relative;
+    background: linear-gradient(135deg, #0c1929 0%, #0d1f2d 50%, #0a1a28 100%);
+    border-radius: 16px;
+    padding: 5rem 2rem;
+    text-align: center;
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  :root.light .hero-card {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0fdfa 50%, #ecfeff 100%);
+    border: 1px solid var(--border);
+  }
+
+  .glow {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(13, 148, 136, 0.2) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 40% at 30% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  :root.light .glow {
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(13, 148, 136, 0.15) 0%, transparent 60%);
+  }
+
+  .stars {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 30% 10%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 50% 40%, rgba(255,255,255,0.25), transparent),
+      radial-gradient(1px 1px at 70% 30%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,0.25), transparent);
+    pointer-events: none;
+  }
+
+  :root.light .stars { display: none; }
+
+  .hero-content {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .cta:hover { background: var(--accent-light); }
+
+  .section-header {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .demo-col {
+    padding: 1.5rem;
+  }
+
+  .demo-col:first-child {
+    border-right: 1px solid var(--border);
+  }
+
+  .demo-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .fountain-code {
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .rendered {
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  .scene { color: var(--white); }
+  .action { color: var(--text); margin: 0.75rem 0; }
+  .character { color: var(--white); text-align: center; margin-top: 0.75rem; }
+  .paren { color: var(--text-dim); text-align: center; font-size: 11pt; }
+  .dialogue { color: var(--text); text-align: center; max-width: 65%; margin: 0 auto; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .feature {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+
+  .feature h4 {
+    color: var(--white);
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .syntax-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .syntax-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .syntax-item code {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-light);
+    background: var(--card);
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    border: 1px solid var(--border);
+  }
+
+  .syntax-item span {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+
+  .origin p {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .origin a {
+    color: var(--accent-light);
+    text-decoration: none;
+  }
+
+  .origin a:hover { text-decoration: underline; }
+</style>
