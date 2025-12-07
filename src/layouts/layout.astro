@@ -17,10 +17,10 @@ const { title } = Astro.props;
   </head>
   <body>
     <nav>
-      <div class="logo">
+      <a href="/" class="logo">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
         <span>FountainFormat</span>
-      </div>
+      </a>
       <div class="nav-links">
         <a href="/syntax">Syntax</a>
         <a href="/examples">Examples</a>
@@ -32,10 +32,10 @@ const { title } = Astro.props;
     <slot />
 
     <footer>
-      <div class="footer-logo">
+      <a href="/" class="footer-logo" id="footer-home">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
         <span>FountainFormat</span>
-      </div>
+      </a>
       <div class="footer-right">
         <span>By <a href="https://thorsten.info">Thorsten Harms</a></span>
         <button id="theme-toggle" aria-label="Toggle theme">
@@ -92,7 +92,10 @@ const { title } = Astro.props;
         font-weight: 600;
         color: var(--white);
         font-size: 1.1rem;
+        text-decoration: none;
       }
+
+      .logo:hover { opacity: 0.8; }
 
       .logo .icon { color: var(--accent-light); }
 
@@ -127,7 +130,10 @@ const { title } = Astro.props;
         gap: 0.5rem;
         color: var(--text-dim);
         font-size: 0.85rem;
+        text-decoration: none;
       }
+
+      .footer-logo:hover { color: var(--accent-light); }
 
       .footer-right {
         display: flex;
@@ -161,6 +167,7 @@ const { title } = Astro.props;
     <script>
       const toggle = document.getElementById('theme-toggle');
       const root = document.documentElement;
+      const footerHome = document.getElementById('footer-home');
       
       if (localStorage.getItem('theme') === 'light') {
         root.classList.add('light');
@@ -169,6 +176,13 @@ const { title } = Astro.props;
       toggle?.addEventListener('click', () => {
         root.classList.toggle('light');
         localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      });
+
+      footerHome?.addEventListener('click', (e) => {
+        if (window.location.pathname === '/') {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       });
     </script>
   </body>
