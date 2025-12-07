@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/layout.astro';
+---
+
+<Layout title="Fountain Tools & Editors — FountainFormat">
+  <main>
+    <section class="hero-small">
+      <h1>Fountain Tools & Editors</h1>
+      <p class="tagline">Software that supports the Fountain format.</p>
+    </section>
+
+    <section class="tools-section">
+      <div class="section-header">
+        <h2>Editors</h2>
+        <p>Write and edit Fountain screenplays.</p>
+      </div>
+      
+      <div class="tools-grid">
+        <a href="https://coffeedraft.com" class="tool-card featured">
+          <div class="tool-badge">Free</div>
+          <h3>CoffeeDraft</h3>
+          <p>Browser-based Fountain editor. No install, no account. Private by design—your scripts stay on your device.</p>
+          <span class="tool-platform">Web</span>
+        </a>
+
+        <a href="https://www.highland2.app" class="tool-card">
+          <h3>Highland 2</h3>
+          <p>Native Mac app from John August, co-creator of Fountain. Clean interface, powerful features.</p>
+          <span class="tool-platform">Mac</span>
+        </a>
+
+        <a href="https://quollwriter.com" class="tool-card">
+          <h3>Quoll Writer</h3>
+          <p>Free writing software with Fountain support. Distraction-free environment for long-form writing.</p>
+          <span class="tool-platform">Windows · Mac · Linux</span>
+        </a>
+
+        <a href="https://www.slugline.co" class="tool-card">
+          <h3>Slugline</h3>
+          <p>Minimal Mac screenwriting app built around Fountain. Markdown-inspired simplicity.</p>
+          <span class="tool-platform">Mac · iOS</span>
+        </a>
+
+        <a href="https://jotterpad.app" class="tool-card">
+          <h3>JotterPad</h3>
+          <p>Mobile-first writing app with Fountain support. Write screenplays on your phone or tablet.</p>
+          <span class="tool-platform">Android · iOS</span>
+        </a>
+
+        <a href="https://ia.net/writer" class="tool-card">
+          <h3>iA Writer</h3>
+          <p>Popular Markdown editor with Fountain template support. Beautiful typography, focused writing.</p>
+          <span class="tool-platform">Mac · Windows · iOS · Android</span>
+        </a>
+
+        <a href="https://www.fadeinpro.com" class="tool-card">
+          <h3>Fade In</h3>
+          <p>Professional screenwriting software. Imports and exports Fountain alongside industry formats.</p>
+          <span class="tool-platform">Mac · Windows · Linux</span>
+        </a>
+
+        <a href="https://www.writersolohq.com" class="tool-card">
+          <h3>WriterSolo</h3>
+          <p>Free screenwriting app with Fountain support. Collaboration features included.</p>
+          <span class="tool-platform">Web · Mac · Windows</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <div class="section-header">
+        <h2>Plugins & Extensions</h2>
+        <p>Add Fountain support to your favorite editor.</p>
+      </div>
+      
+      <div class="tools-grid">
+        <a href="https://marketplace.visualstudio.com/items?itemName=piersdeseilligny.betterfountain" class="tool-card">
+          <h3>Better Fountain (VS Code)</h3>
+          <p>Syntax highlighting, autocomplete, and live preview for Fountain in Visual Studio Code.</p>
+          <span class="tool-platform">VS Code</span>
+        </a>
+
+        <a href="https://packagecontrol.io/packages/Fountain" class="tool-card">
+          <h3>Fountain (Sublime Text)</h3>
+          <p>Syntax highlighting and snippets for Fountain screenplays in Sublime Text.</p>
+          <span class="tool-platform">Sublime Text</span>
+        </a>
+
+        <a href="https://github.com/vim-scripts/fountain.vim" class="tool-card">
+          <h3>fountain.vim</h3>
+          <p>Fountain syntax highlighting for Vim and Neovim.</p>
+          <span class="tool-platform">Vim · Neovim</span>
+        </a>
+
+        <a href="https://github.com/emacs-fountain/fountain-mode" class="tool-card">
+          <h3>Fountain Mode (Emacs)</h3>
+          <p>Major mode for Fountain screenplays in Emacs. Export to PDF, navigation, outlining.</p>
+          <span class="tool-platform">Emacs</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <div class="section-header">
+        <h2>Converters & Utilities</h2>
+        <p>Convert Fountain to other formats.</p>
+      </div>
+      
+      <div class="tools-grid">
+        <a href="https://fountain.io/_downloads/big-fish.fountain" class="tool-card">
+          <h3>Sample Scripts</h3>
+          <p>Download Big Fish and other sample Fountain files from the official site.</p>
+          <span class="tool-platform">Download</span>
+        </a>
+
+        <a href="https://github.com/Screenplain/screenplain" class="tool-card">
+          <h3>Screenplain</h3>
+          <p>Command-line tool to convert Fountain to FDX (Final Draft) or HTML.</p>
+          <span class="tool-platform">Python · CLI</span>
+        </a>
+
+        <a href="https://github.com/ifrost/afterwriting-labs" class="tool-card">
+          <h3>Afterwriting</h3>
+          <p>Open source screenwriting app. Converts Fountain to PDF with professional formatting.</p>
+          <span class="tool-platform">Web · CLI</span>
+        </a>
+
+        <a href="https://github.com/nyousefi/Fountain" class="tool-card">
+          <h3>Fountain Parser</h3>
+          <p>Official open source Fountain parser. Build your own Fountain tools.</p>
+          <span class="tool-platform">Objective-C · iOS · Mac</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h3>Start writing now</h3>
+      <p class="cta-text">No download required. Open CoffeeDraft and write your first scene.</p>
+      <a href="https://coffeedraft.com" class="cta">Try CoffeeDraft — Free</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main { width: 100%; }
+
+  .hero-small {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-small h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-small .tagline {
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  .tools-section {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--border);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .tool-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .tool-card:hover {
+    border-color: var(--accent-light);
+  }
+
+  .tool-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, var(--card) 0%, rgba(13, 148, 136, 0.05) 100%);
+  }
+
+  .tool-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    background: rgba(13, 148, 136, 0.15);
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tool-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .tool-card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .tool-platform {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  .cta-section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .cta-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .cta:hover { background: var(--accent-light); }
+
+  @media (max-width: 600px) {
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
